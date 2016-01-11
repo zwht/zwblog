@@ -505,8 +505,8 @@ body.nav-opened .site-wrapper {
     height: 100vh;
     margin-bottom: 5rem;
     text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
+    background: #014141 no-repeat center center;
+    /*background-size: cover;*/
     overflow: hidden;
 }
 

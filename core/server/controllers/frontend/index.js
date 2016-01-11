@@ -35,7 +35,7 @@ function renderPost(req, res) {
     return function renderPost(post) {
         var view = templates.single(req.app.get('activeTheme'), post),
             response = formatResponse.single(post);
-
+        //console.log(response);
         setResponseContext(req, res, response);
         res.render(view, response);
     };
@@ -113,6 +113,7 @@ frontendControllers = {
 
         api.posts.read(params).then(function then(result) {
             var post = result.posts[0];
+
 
             if (!post) {
                 return next();

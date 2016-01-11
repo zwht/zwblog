@@ -786,19 +786,19 @@ User = ghostBookshelf.Model.extend({
                 return resolve(userData);
             }
 
-            request({url: 'http:' + gravatarUrl + '&d=404&r=x', timeout: 2000}, function handler(err, response) {
-                if (err) {
-                    // just resolve with no image url
-                    return resolve(userData);
-                }
-
-                if (response.statusCode !== 404) {
-                    gravatarUrl += '&d=mm&r=x';
-                    userData.image = gravatarUrl;
-                }
-
-                resolve(userData);
-            });
+            //request({url: 'http:' + gravatarUrl + '&d=404&r=x', timeout: 2000}, function handler(err, response) {
+            //    if (err) {
+            //        // just resolve with no image url
+            //        return resolve(userData);
+            //    }
+            //
+            //    if (response.statusCode !== 404) {
+            //        gravatarUrl += '&d=mm&r=x';
+            //        userData.image = gravatarUrl;
+            //    }
+            //
+            //    resolve(userData);
+            //});
         });
     },
     // Get the user by email address, enforces case insensitivity rejects if the user is not found

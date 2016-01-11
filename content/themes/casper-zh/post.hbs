@@ -33,33 +33,6 @@
 
             <footer class="post-footer">
 
-                {{! Everything inside the #author tags pulls data from the author }}
-                {{#author}}
-
-                    {{#if image}}
-                        <figure class="author-image">
-                            <a class="img" href="{{url}}" style="background-image: url({{image}})"><span
-                                    class="hidden">{{name}}的头像</span></a>
-                        </figure>
-                    {{/if}}
-
-                    <section class="author">
-                        <h4><a href="{{url}}">{{name}}</a></h4>
-
-                        {{#if bio}}
-                            <p>{{bio}}</p>
-                        {{else}}
-                            <p>继续阅读此作者的<a href="{{url}}">更多文章</a>。</p>
-                        {{/if}}
-                        <div class="author-meta">
-                            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                            {{#if website}}<span class="author-link icon-link"><a
-                                    href="{{website}}">{{website}}</a></span>{{/if}}
-                        </div>
-                    </section>
-
-                {{/author}}
-
                 <!-- 多说评论框 start -->
                 <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
                 <!-- 多说评论框 end -->

@@ -185,7 +185,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    font-family: "微软雅黑","宋体", "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
     letter-spacing: 0.01rem;
     font-size: 1.4rem;
     line-height: 1.75em;
@@ -485,9 +485,9 @@ margin on the iframe, cause it breaks stuff. */
 
 body.nav-opened .site-wrapper {
     overflow-x: hidden;
-    -webkit-transform: translate3D(-240px, 0, 0);
-        -ms-transform: translate3D(-240px, 0, 0);
-            transform: translate3D(-240px, 0, 0);
+    -webkit-transform: translate3D(170px, 0, 0);
+        -ms-transform: translate3D(170px, 0, 0);
+            transform: translate3D(170px, 0, 0);
     -webkit-transition: -webkit-transform 0.3s ease;
             transition: transform 0.3s ease;
 }
@@ -502,9 +502,7 @@ body.nav-opened .site-wrapper {
     position: relative;
     display: table;
     width: 100%;
-    height: 100vh;
     margin-bottom: 5rem;
-    text-align: center;
     background: #014141 no-repeat center center;
     /*background-size: cover;*/
     overflow: hidden;
@@ -529,8 +527,8 @@ body.nav-opened .site-wrapper {
 body.nav-opened .nav-cover {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 240px;
+    left: 170px;
+    right: 0;
     bottom: 0;
     z-index: 200;
 }
@@ -538,12 +536,12 @@ body.nav-opened .nav-cover {
 .nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     bottom: 0;
     z-index: 5;
-    width: 240px;
+    width: 170px;
     opacity: 0;
-    background: #111;
+    background: #2A2A2A;
     margin-bottom: 0;
     text-align: left;
     overflow-y: auto;
@@ -554,9 +552,9 @@ body.nav-opened .nav-cover {
 }
 
 body.nav-closed .nav {
-    -webkit-transform: translate3D(97px, 0, 0);
-        -ms-transform: translate3D(97px, 0, 0);
-            transform: translate3D(97px, 0, 0);
+    -webkit-transform: translate3D(-97px, 0, 0);
+        -ms-transform: translate3D(-97px, 0, 0);
+            transform: translate3D(-97px, 0, 0);
 }
 
 body.nav-opened .nav {
@@ -582,12 +580,14 @@ body.nav-opened .nav {
 
 .nav-close {
     position: absolute;
-    top: 38px;
+    top: 43px;
     right: 25px;
     width: 20px;
     height: 20px;
     padding: 0;
     font-size: 10px;
+    overflow: hidden;
+    vertical-align: middle;
 }
 
 .nav-close:focus {
@@ -598,11 +598,10 @@ body.nav-opened .nav {
 .nav-close:after {
     content: '';
     position: absolute;
-    top: 0;
     width: 20px;
     height: 1px;
     background: rgb(150,150,150);
-    top: 15px;
+    top: 10px;
     -webkit-transition: background 0.15s ease;
             transition: background 0.15s ease;
 }
@@ -625,52 +624,24 @@ body.nav-opened .nav {
 }
 
 .nav ul {
-    padding: 90px 9% 5%;
+    padding: 90px 0 5%;
     list-style: none;
     counter-reset: item;
 }
 
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
 .nav li {
     margin: 0;
 }
 .nav li a {
     text-decoration: none;
-    line-height: 1.4;
+    line-height: 45px;
     font-size: 1.4rem;
     display: block;
-    padding: 0.6rem 4%;
+    padding: 0 4%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.nav li a:after {
-    display: inline-block;
-    content: " .......................................................";
-    color: rgba(255,255,255,0.2);
-    margin-left: 5px;
-}
-.nav .nav-current:before {
-    color: #fff;
-}
-.nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
-    width: 100%;
-    height: 1px;
-}
-
 .nav a:link,
 .nav a:visited {
     color: #B8B8B8;
@@ -681,6 +652,7 @@ body.nav-opened .nav {
 .nav a:active,
 .nav a:focus {
     color: #fff;
+    background: #E78170;
 }
 
 .subscribe-button {
@@ -785,7 +757,6 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    float: right;
     height: 38px;
     padding: 0 15px;
     border-style: solid;
@@ -838,9 +809,9 @@ body.nav-opened .nav {
     background: #111;
     border-color: #111;
     color: #fff;
-    -webkit-transform: translate3D(94px, 0, 0);
-        -ms-transform: translate3D(94px, 0, 0);
-            transform: translate3D(94px, 0, 0);
+    -webkit-transform: translate3D(-94px, 0, 0);
+        -ms-transform: translate3D(-94px, 0, 0);
+            transform: translate3D(-94px, 0, 0);
     transition: all 0.3s ease;
 }
 
@@ -1613,7 +1584,7 @@ body:not(.post-template) .post-title {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: auto;
-        min-height: 240px;
+        min-height: 170px;
         height: 60vh;
         padding: 15% 0;
     }

@@ -42,7 +42,7 @@ body { margin: 0; }
 a { background: transparent; }
 a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
-h1 { font-size: 2em; margin: 0.67em 0; }
+h1 { font-size: 3em; margin: 0.67em 0; }
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: 700; }
 dfn { font-style: italic; }
@@ -187,7 +187,7 @@ body {
     max-height: 100%;
     font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
     letter-spacing: 0.01rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 1.75em;
     color: #3A4145;
     -webkit-font-feature-settings: 'kern' 1;
@@ -216,30 +216,30 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
-    font-size: 3.6rem;
+    font-size: 2.4rem;
     letter-spacing: -1px;
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 1.6rem;
 }
 
 h4 {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 h6 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 a {
@@ -913,10 +913,9 @@ body.nav-opened .nav {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: 80%;
-    max-width: 710px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem 2rem 1rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 }
@@ -1041,6 +1040,7 @@ body:not(.post-template) .post-title {
    ========================================================================== */
 
 .post-template .post-header {
+    text-align: center;
    margin-bottom: 3.4rem;
 }
 
@@ -1566,7 +1566,7 @@ body:not(.post-template) .post-title {
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 4rem 0 0 0;
     padding: 1rem 15px;
     font-family: inherit;
     font-size: 1rem;
@@ -1657,28 +1657,28 @@ body:not(.post-template) .post-title {
     }
 
     h1 {
-        font-size: 4.5rem;
+        font-size: 3rem;
         text-indent: -2px;
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 2.4rem;
     }
 
     h3 {
-        font-size: 3.1rem;
+        font-size: 1.6rem;
     }
 
     h4 {
-        font-size: 2.5rem;
+        font-size: 1.4rem;
     }
 
     h5 {
-        font-size: 2.2rem;
+        font-size: 1.2rem;
     }
 
     h6 {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
 
     .author-profile {
@@ -1839,6 +1839,7 @@ body:not(.post-template) .post-title {
     }
 
     .post-template .post-header {
+        text-align: center;
         margin-bottom: 2rem;
     }
 
@@ -1873,7 +1874,7 @@ body:not(.post-template) .post-title {
     }
 
     h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
         letter-spacing: -1px;
     }
 

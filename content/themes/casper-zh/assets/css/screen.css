@@ -27,7 +27,6 @@ body{ margin:0; }
 a{ background:transparent; }
 a:focus{ outline:thin dotted; }
 a:active, a:hover{ outline:0; }
-h1{ font-size:3em; margin:0.67em 0; }
 abbr[title]{ border-bottom:1px dotted; }
 b, strong{ font-weight:700; }
 dfn{ font-style:italic; }
@@ -114,7 +113,7 @@ html { height: 100%; width: 100%; font-size: 10px !important; }
 body { height: 100%; width: 100%; overflow-y: auto; overflow-x: hidden; font-family: "微软雅黑", Helvetica, Arial, sans-serif; margin: 0; line-height: 1.42857143; color: #333 }
 a, a:link, a:visited { color: #333; text-decoration: none }
 ul { list-style-type: none; margin: 0; padding: 0 }
-h1, h2, h3, h4, h5, h6, li, p { margin: 0; padding: 0; font-size: 1em; font-style: normal; font-weight: normal }
+h1, h2, h3, h4, h5, h6, li, p { margin: 0; padding: 0; font-style: normal; font-weight: normal }
 a,b,i,img{vertical-align: middle; font-weight: normal; font-style: normal;display: inline-block}
 .pull-right { float: right; }
 .pull-left { float: left; }
@@ -124,6 +123,7 @@ a,b,i,img{vertical-align: middle; font-weight: normal; font-style: normal;displa
 .clear:after { content: "."; height: 0; visibility: hidden; display: block; clear: both }
 .overflow { overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 img { vertical-align: middle }
+
 @media screen and (min-width: 481px) and (max-width: 750px) {
     body { font-size: 2em }
 }
@@ -136,6 +136,11 @@ img { vertical-align: middle }
 @media screen and (min-width: 100px) and (max-width: 320px) {
     body { font-size: 1.6em }
 }
+@media screen and (min-width: 751px){
+    body { font-size: 1.4em }
+}
+
+
 
 /* ==========================================================================
    3. common styles
@@ -144,6 +149,9 @@ img { vertical-align: middle }
 .nav ul li a{ line-height:46px; color:#FFF; width:100%; padding:0 1.5rem;}
 .nav ul li a:hover{ background:#b34129;}
 .nav ul .nav-current a{ background:#e78170;}
+.nav .nav-close{ position:absolute; right:-20px; background:#c00; width:20px; height:30px; top:20px;}
 
 
-.site-wrapper{ padding-left:170px;}
+.site-wrapper{ padding-left:170px; position:relative;}
+.main-header{ position:fixed; left:170px; top:0; width:25%; overflow:hidden; height:100%; background:#ededed;}
+.main-header .main-nav{ display:none;}

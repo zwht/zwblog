@@ -111,7 +111,8 @@ table{ border-collapse:collapse; border-spacing:0; }
 *, :after, :before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0}
 html { height: 100%; width: 100%; font-size: 10px !important; }
 body { height: 100%; width: 100%; overflow-y: auto; overflow-x: hidden; font-family: "微软雅黑", Helvetica, Arial, sans-serif; margin: 0; line-height: 1.42857143; color: #333 }
-a, a:link, a:visited { color: #333; text-decoration: none }
+a, a:link, a:visited { color: #075db3; text-decoration: none; transition:0.3s; }
+a:hover{ opacity:0.6; color:#FF7606}
 ul { list-style-type: none; margin: 0; padding: 0 }
 h1, h2, h3, h4, h5, h6, li, p { margin: 0; padding: 0; font-style: normal; font-weight: normal }
 a,b,i,img{vertical-align: middle; font-weight: normal; font-style: normal;display: inline-block}
@@ -123,6 +124,12 @@ a,b,i,img{vertical-align: middle; font-weight: normal; font-style: normal;displa
 .clear:after { content: "."; height: 0; visibility: hidden; display: block; clear: both }
 .overflow { overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 img { vertical-align: middle }
+h1{ font-size:1.6em;}
+h2{ font-size:1.4em;}
+h3{ font-size:1.2em;}
+h4{ font-size:1em;}
+h5{ font-size:1em;}
+h6{ font-size:0.8em;}
 
 @media screen and (min-width: 481px) and (max-width: 750px) {
     body { font-size: 2em }
@@ -145,13 +152,53 @@ img { vertical-align: middle }
 /* ==========================================================================
    3. common styles
    ========================================================================== */
-.nav{ position:fixed; left:0; top:0; width:170px; height:100%; background:#2a2a2a; color:#FFF;}
+
+.nav{ position:fixed; left:0; top:0; width:170px; height:100%; background:#2a2a2a; color:#FFF; transition:0.4s; z-index:100;}
 .nav ul li a{ line-height:46px; color:#FFF; width:100%; padding:0 1.5rem;}
 .nav ul li a:hover{ background:#b34129;}
 .nav ul .nav-current a{ background:#e78170;}
-.nav .nav-close{ position:absolute; right:-20px; background:#c00; width:20px; height:30px; top:20px;}
+.nav .nav-close{ display:none;}
 
 
-.site-wrapper{ padding-left:170px; position:relative;}
-.main-header{ position:fixed; left:170px; top:0; width:25%; overflow:hidden; height:100%; background:#ededed;}
+.site-wrapper{position:relative; transition:0.4s; width:100%;}
+.main-header{ position:fixed; left:170px; top:0; width:25%; overflow:hidden; height:100%; background-position: center; background-size: cover;}
 .main-header .main-nav{ display:none;}
+.main-header .vertical{ position:absolute; bottom:2em; color:#FFF; padding-left:2em; text-shadow:-1px 0 0 rgba(0,0,0,0.75)}
+.main-header .vertical h1{ font-size:3em; font-weight:bold;}
+
+.content{ padding-left:25%; margin-left:170px;}
+.content_box{ padding:0 1.5em; max-width:850px;}
+
+
+.post{ padding:1em 0; border-bottom:0.1em dashed #ededed;}
+.post .post-header h2{ padding-bottom:0.5em;word-break:break-all;word-wrap:break-word;}
+.post .post-excerpt{ color:#666;}
+
+.post .post-meta{ }
+.post .post-meta a{ vertical-align:middle;}
+.post .post-meta time{ color:#888; vertical-align:middle;}
+
+@media screen and (max-width: 751px){
+    .nav-cover{ width:100%; height:100%; background:rgba(0,0,0,0.4); display:none; z-index:10; position:absolute; left:0; top:0;}
+
+    .nav-opened .nav{ transform: translateX(-170px);}
+    .nav-opened .site-wrapper{}
+
+    .nav-closed .nav .nav-close{ display:block;}
+    .nav-closed .site-wrapper{transform: translateX(170px);}
+    .nav-closed .nav-cover{ display:block;}
+
+
+    .nav{ position:fixed; left:0; top:0; width:170px; height:100%; background:#2a2a2a; color:#FFF;}
+    .nav .nav-close{ position:absolute; right:-30px; top:10px; background:#c00; width:30px; height:30px; border-radius:15px; line-height:30px; font-size:1.3em; font-weight:bold; text-align:center; color:#FFF;}
+
+
+    .site-wrapper{position:relative;}
+    .main-header{ position:static; max-height:200px; width:100%;  overflow:hidden; background-position: center; background-size: cover;}
+    .main-header .main-nav{ display:block; height:46px; padding-left:0.4em; line-height:46px;}
+    .main-header .vertical{ position:static; color:#FFF; text-shadow:-1px 0 0 rgba(0,0,0,0.75); text-align:center;}
+    .main-header .vertical h1{ font-size:1.6em; font-weight:bold;}
+
+    .content{ padding-left:0; margin-left:0;}
+    .content_box{ padding:0 1em; width:100%; overflow:hidden;}
+}

@@ -21,42 +21,44 @@
     </div>
     <div class="main-right">
         <main class="content" role="main">
-            <article class="{{post_class}}">
+            <div class="content_box">
+                <article class="{{post_class}}">
 
-                <header class="post-header">
-                    <h1 class="post-title">{{title}}</h1>
-                    <section class="post-meta">
-                        <time class="post-date"
-                              datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY年MM月DD日"}}</time> {{tags prefix=" 标签："}}
+                    <header class="post-header">
+                        <h1 class="post-title">{{title}}</h1>
+                        <section class="post-meta">
+                            <time class="post-date"
+                                  datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY年MM月DD日"}}</time> {{tags prefix=" 标签："}}
+                        </section>
+                    </header>
+
+                    <section class="post-content">
+                        {{content}}
                     </section>
-                </header>
 
-                <section class="post-content">
-                    {{content}}
-                </section>
+                    <footer class="post-footer">
 
-                <footer class="post-footer">
+                        <!-- 多说评论框 start -->
+                        <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
+                        <!-- 多说评论框 end -->
+                        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                        <script type="text/javascript">
+                            var duoshuoQuery = {short_name: "html5css3webapp"};
+                            (function () {
+                                var ds = document.createElement('script');
+                                ds.type = 'text/javascript';
+                                ds.async = true;
+                                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                                ds.charset = 'UTF-8';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                            })();
+                        </script>
+                        <!-- 多说公共JS代码 end -->
 
-                    <!-- 多说评论框 start -->
-                    <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
-                    <!-- 多说评论框 end -->
-                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-                    <script type="text/javascript">
-                        var duoshuoQuery = {short_name: "html5css3webapp"};
-                        (function () {
-                            var ds = document.createElement('script');
-                            ds.type = 'text/javascript';
-                            ds.async = true;
-                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                            ds.charset = 'UTF-8';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                        })();
-                    </script>
-                    <!-- 多说公共JS代码 end -->
+                    </footer>
 
-                </footer>
-
-            </article>
+                </article>
+            </div>
         </main>
         <aside class="read-next">
             <div>

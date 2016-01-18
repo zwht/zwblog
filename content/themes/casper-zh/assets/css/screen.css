@@ -167,8 +167,14 @@ h6{ font-size:0.8em;}
 .main-header .vertical{ position:absolute; bottom:2em; color:#FFF; padding-left:2em; text-shadow:-1px 0 0 rgba(0,0,0,0.75)}
 .main-header .vertical h1{ font-size:3em; font-weight:bold;}
 
-.content{ padding-left:25%; margin-left:170px;}
+.content,.read-next{ padding-left:25%; margin-left:170px;}
 .content_box{ padding:0 1.5em; max-width:850px;}
+.read-next>div{ max-width:850px;}
+.read-next a{width:50%; float:left; padding:1em;}
+.read-next a .post{ border:none;}
+.read-next a .post h2,.read-next a .post p{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+
+.read-next:after { content: "."; height: 0; visibility: hidden; display: block; clear: both }
 
 
 .post{ padding:1em 0; border-bottom:0.1em dashed #ededed;}
@@ -206,6 +212,7 @@ h6{ font-size:0.8em;}
     .main-header .vertical{ position:static; color:#FFF; text-shadow:-1px 0 0 rgba(0,0,0,0.75); text-align:center;}
     .main-header .vertical h1{ font-size:1.6em; font-weight:bold;}
 
-    .content{ padding-left:0; margin-left:0;}
+    .content,.read-next{ padding-left:0; margin-left:0;}
     .content_box{ padding:0 1em; width:100%; overflow:hidden;}
+    .read-next a{ padding:0.5em;}
 }

@@ -164,7 +164,7 @@ h6{ font-size:0.8em;}
 
 
 .site-wrapper{position:relative; transition:0.4s; width:100%; min-height:100%; padding-bottom:60px;}
-.main-header{ position:fixed; left:170px; top:0; width:25%; overflow:hidden; height:100%; background-position: center; background-size: cover;}
+.main-header{ position:fixed; z-index:88; left:170px; top:0; width:25%; overflow:hidden; height:100%; background-position: center; background-size: cover;}
 .main-header .main-nav{ display:none;}
 .main-header .vertical{ position:absolute; bottom:2em; color:#FFF; padding-left:2em; text-shadow:-1px 0 0 rgba(0,0,0,0.75)}
 .main-header .vertical h1{ font-size:3em; font-weight:bold;}
@@ -172,15 +172,16 @@ h6{ font-size:0.8em;}
 .content,.read-next{ padding-left:25%; margin-left:170px;}
 .content_box{ padding:0 1.5em; max-width:850px;}
 .read-next>div{ max-width:850px;}
-.read-next a{width:50%; float:left; padding:1em;}
+.read-next a{width:50%; float:left; padding:1em; text-align:center;}
+.read-next a button{border:none; padding:0.3em 0.9em;  background:#87b87f; color:#FFF;}
 .read-next a .post{ border:none;}
 .read-next a .post h2,.read-next a .post p{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
 
 .read-next:after { content: "."; height: 0; visibility: hidden; display: block; clear: both }
 
 
-.post{ padding:1em 0; border-bottom:0.1em dashed #ededed;}
-.post .post-header h2{ padding-bottom:0.5em;word-break:break-all;word-wrap:break-word;}
+.post{ padding:1em 0; border-bottom:0.1em dashed #ededed; word-break:break-all;word-wrap:break-word;}
+.post .post-header h2{ padding-bottom:0.5em;}
 .post .post-excerpt{ color:#666;}
 
 .post .post-meta{ }
@@ -191,6 +192,9 @@ h6{ font-size:0.8em;}
 
 .site-footer{ position:absolute; bottom:0;  text-align:center; background:rgba(0,0,0,0.5); color:#FFF; width:100%; padding:0.3em 0;}
 .site-footer a{ color:#FFF; margin-right:20px;}
+
+.footer_box{ margin-left:170px; padding-left:25%;}
+.footer_box_box{ max-width:850px;}
 
 /*详情页面css-------------------------------------*/
 .post-template .post-header{ margin:1em 0 3em;}
@@ -215,13 +219,17 @@ h6{ font-size:0.8em;}
     .nav .nav-close{ position:absolute; right:-30px; top:10px; background:#c00; width:30px; height:30px; border-radius:15px; line-height:30px; font-size:1.3em; font-weight:bold; text-align:center; color:#FFF;}
 
 
-    .site-wrapper{position:relative;}
-    .main-header{ position:static; max-height:200px; width:100%;  overflow:hidden; background-position: center; background-size: cover;}
+    .site-wrapper{position:relative; padding-bottom:90px;}
+    .main-header{ position:static; max-height:150px; width:100%;  overflow:hidden; background-position: center; background-size: cover;}
     .main-header .main-nav{ display:block; height:46px; padding-left:0.4em; line-height:46px;}
-    .main-header .vertical{ position:static; color:#FFF; text-shadow:-1px 0 0 rgba(0,0,0,0.75); text-align:center;}
+    .main-header .main-nav a{ color:#b34129; font-weight:bold; font-size:1.6em;}
+    .main-header .vertical{ height:100px; position:static; color:#FFF; text-shadow:-1px 0 0 rgba(0,0,0,0.75); text-align:center; padding-bottom:1.5em; padding-left:0;}
     .main-header .vertical h1{ font-size:1.6em; font-weight:bold;}
 
     .content,.read-next{ padding-left:0; margin-left:0;}
     .content_box{ padding:0 1em; width:100%; overflow:hidden;}
     .read-next a{ padding:0.5em;}
+
+    .footer_box{ margin-left:0; padding-left:0;}
+    .footer_box_box{ max-width:100%;}
 }

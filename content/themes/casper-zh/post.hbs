@@ -6,7 +6,7 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
     <div class="main-left">
-        <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+        <header class="main-header post-head {{#if image}}" style="background-image: url('{{image}}'){{else}}no-cover{{/if}}">
             <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
                 {{#if @blog.logo}}
                     <a class="blog-logo" href="{{@blog.url}}">
@@ -14,9 +14,12 @@
                     </a>
                 {{/if}}
                 {{#if @blog.navigation}}
-                    <a class="menu-button icon-menu" href="#"><span class="word">菜单</span></a>
+                    <a class="menu-button icon-menu" href="#"><span class="word"></span></a>
                 {{/if}}
             </nav>
+            {{#if image}}
+                <div class="vertical"></div>
+            {{/if}}
         </header>
     </div>
     <div class="main-right">
@@ -63,22 +66,22 @@
         <aside class="read-next">
             <div>
                 {{#next_post}}
-                    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"
+                    <a class="read-next-story"
                             href="{{url}}">
                         <section class="post">
-                            <h2>{{title}}</h2>
-
-                            <p>{{excerpt words="19"}}&hellip;</p>
+                            <button>上一篇</button>
+                            <!--<h2>{{title}}</h2>
+                            <p>{{excerpt words="19"}}&hellip;</p>-->
                         </section>
                     </a>
                 {{/next_post}}
                 {{#prev_post}}
-                    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"
+                    <a class="read-next-story prev"
                             href="{{url}}">
                         <section class="post">
-                            <h2>{{title}}</h2>
-
-                            <p>{{excerpt words="19"}}&hellip;</p>
+                            <button>下一篇</button>
+                            <!--<h2>{{title}}</h2>
+                            <p>{{excerpt words="19"}}&hellip;</p>-->
                         </section>
                     </a>
                 {{/prev_post}}

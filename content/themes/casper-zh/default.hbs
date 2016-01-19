@@ -2,48 +2,59 @@
 <html lang="zh-CN">
 <head>
     {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+    <meta name="description" content="{{meta_description}}"/>
     <!--百度统计代码===========================================-->
-    <meta name="baidu-site-verification" content="HKxwqiEzb8" />
+    <meta name="baidu-site-verification" content="HKxwqiEzb8"/>
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="shortcut icon" href="{{asset "favicon.png"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}"/>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}} nav-opened">
 
-    {{navigation}}
-    <div class="site-wrapper">
+{{navigation}}
+<div class="site-wrapper">
 
-        {{! Everything else gets inserted here }}
-        {{{body}}}
+    {{! Everything else gets inserted here }}
+    {{{body}}}
 
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
-        </footer>
+    <footer class="site-footer clearfix">
+        <div class="footer_box">
+            <div class="footer_box_box">
+                <section class="copyright">
+                    <a href="{{@blog.url}}">{{@blog.title}}</a>
+                    &copy; {{date format="YYYY"}}
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a href="https://ghost.org">Ghost</a>
+                    <!--<a href="http://www.ghostchina.com">GhostChina</a>-->
+                </section>
+            </div>
+        </div>
+    </footer>
 
-    </div>
+</div>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
 
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-    {{! The main JavaScript file for Casper }}
-    <script src="{{asset "js/index.js"}}"></script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+{{! The main JavaScript file for Casper }}
+<script src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>

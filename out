@@ -1,5 +1,0 @@
-[31mERROR: Unable to access Ghost's content path:[0m
-  ENOENT, no such file or directory '/var/www/zwblog/content/data'
-
-[32mCheck that the content path exists and file system permissions are correct.
-Help and documentation can be found at http://support.ghost.org.[0m

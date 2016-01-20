@@ -3,3 +3,5 @@
 /.idea
 /config.js
 /content/data/ghost-dev.db
+/nohup.out
+/out

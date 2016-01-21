@@ -5,90 +5,105 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-    <div class="main-left">
-        <header class="main-header post-head {{#if image}}" style="background-image: url('{{image}}'){{else}}no-cover{{/if}}">
-            <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-                <!--{{#if @blog.logo}}
-                    <a class="blog-logo" href="{{@blog.url}}">
-                        <img src="{{@blog.logo}}" alt="{{@blog.title}}"/>
-                    </a>
-                {{/if}}-->
-                {{#if @blog.navigation}}
-                    <a class="menu-button icon-menu" href="#"><span class="word"></span></a>
-                {{/if}}
-            </nav>
-            {{#if image}}
-                <div class="vertical"></div>
+
+    <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+        <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}"
+                                                                             alt="{{@blog.title}}"/></a>{{/if}}
+            {{#if @blog.navigation}}
+                <a class="menu-button icon-menu" href="#"><span class="word">菜单</span></a>
             {{/if}}
-        </header>
-    </div>
-    <div class="main-right">
-        <main class="content" role="main">
-            <div class="content_box">
-                <article class="{{post_class}}">
+        </nav>
+    </header>
 
-                    <header class="post-header">
-                        <h1 class="post-title">{{title}}</h1>
-                        <section class="post-meta">
-                            <time class="post-date"
-                                  datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY年MM月DD日"}}</time> {{tags prefix=" 标签："}}
-                        </section>
-                    </header>
+    <main class="content" role="main">
+        <article class="{{post_class}}">
 
-                    <section class="post-content">
-                        {{content}}
+            <header class="post-header">
+                <h1 class="post-title">{{title}}</h1>
+                <section class="post-meta">
+                    <time class="post-date"
+                          datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY年MM月DD日"}}</time> {{tags prefix=" 标签："}}
+                </section>
+            </header>
+
+            <section class="post-content">
+                {{content}}
+            </section>
+
+            <footer class="post-footer">
+
+                {{! Everything inside the #author tags pulls data from the author }}
+                {{#author}}
+
+                    {{#if image}}
+                        <figure class="author-image">
+                            <a class="img" href="{{url}}" style="background-image: url({{image}})"><span
+                                    class="hidden">{{name}}的头像</span></a>
+                        </figure>
+                    {{/if}}
+
+                    <section class="author">
+                        <h4><a href="{{url}}">{{name}}</a></h4>
+
+                        {{#if bio}}
+                            <p>{{bio}}</p>
+                        {{else}}
+                            <p>继续阅读此作者的<a href="{{url}}">更多文章</a>。</p>
+                        {{/if}}
+                        <div class="author-meta">
+                            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                            {{#if website}}<span class="author-link icon-link"><a
+                                    href="{{website}}">{{website}}</a></span>{{/if}}
+                        </div>
                     </section>
 
-                    <footer class="post-footer">
+                {{/author}}
 
-                        <!-- 多说评论框 start -->
-                        <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
-                        <!-- 多说评论框 end -->
-                        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-                        <script type="text/javascript">
-                            var duoshuoQuery = {short_name: "html5css3webapp"};
-                            (function () {
-                                var ds = document.createElement('script');
-                                ds.type = 'text/javascript';
-                                ds.async = true;
-                                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                                ds.charset = 'UTF-8';
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                            })();
-                        </script>
-                        <!-- 多说公共JS代码 end -->
+                <!-- 多说评论框 start -->
+                <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
+                <!-- 多说评论框 end -->
+                <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name: "html5css3webapp"};
+                    (function () {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- 多说公共JS代码 end -->
 
-                    </footer>
-
-                </article>
-            </div>
-        </main>
-        <aside class="read-next">
-            <div>
-                {{#next_post}}
-                    <a class="read-next-story"
-                            href="{{url}}">
-                        <section class="post">
-                            <button>上一篇</button>
-                            <!--<h2>{{title}}</h2>
-                            <p>{{excerpt words="19"}}&hellip;</p>-->
-                        </section>
-                    </a>
-                {{/next_post}}
-                {{#prev_post}}
-                    <a class="read-next-story prev"
-                            href="{{url}}">
-                        <section class="post">
-                            <button>下一篇</button>
-                            <!--<h2>{{title}}</h2>
-                            <p>{{excerpt words="19"}}&hellip;</p>-->
-                        </section>
-                    </a>
-                {{/prev_post}}
-            </div>
-        </aside>
-    </div>
+            </footer>
 
 
+        </article>
+    </main>
+
+    <aside class="read-next">
+        {{#next_post}}
+            <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"
+                    href="{{url}}">
+                <section class="post">
+                    <h2>{{title}}</h2>
+
+                    <p>{{excerpt words="19"}}&hellip;</p>
+                </section>
+            </a>
+        {{/next_post}}
+        {{#prev_post}}
+            <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"
+                    href="{{url}}">
+                <section class="post">
+                    <h2>{{title}}</h2>
+
+                    <p>{{excerpt words="19"}}&hellip;</p>
+                </section>
+            </a>
+        {{/prev_post}}
+    </aside>
 
 {{/post}}
